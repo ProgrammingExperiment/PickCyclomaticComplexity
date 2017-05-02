@@ -14,26 +14,31 @@ namespace ConsoleApp1
             Console.WriteLine("Enter directory path: ");
             inFileName = Console.ReadLine();
 
-
-            foreach (var file in Directory.EnumerateFiles(inFileName))
+            try
             {
-                int ifCounter = 0;
-                Console.Write("File: " + file + "\t" );
-            
-                IEnumerable<string> lines = File.ReadLines(file);
-                foreach (var l in lines)
+                foreach (var file in Directory.EnumerateFiles(inFileName))
                 {
-                    if (l.ToLower().Contains("if") )
+                    int ifCounter = 0;
+                    Console.Write("File: " + file + "\t");
+
+                    IEnumerable<string> lines = File.ReadLines(file);
+                    foreach (var l in lines)
                     {
-                        ifCounter++; 
+                        if (l.ToLower().Contains("if"))
+                        {
+                            ifCounter++;
+                        }
+
                     }
 
-                }
+                    Console.Write(" has " + ifCounter + " IF statements \n");
 
-                Console.Write(" has " + ifCounter + " IF statements \n");
-               
+                }
             }
-            
+            catch (Exception e)
+            {
+                Console.WriteLine("Unable to find path");
+            }
             //int counter = 0;
             //string delim = " ,.";
             //string[] fields = null;

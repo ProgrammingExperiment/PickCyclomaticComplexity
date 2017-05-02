@@ -7075,15 +7075,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\luisprograms\\.nuget\\packages\\": {}
+    "C:\\Users\\Shawn Haler\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\luisprograms\\documents\\visual studio 2017\\Projects\\CountIF\\ConsoleApp1\\ConsoleApp1.csproj",
+      "projectUniqueName": "C:\\dev\\PickCyclomaticComplexity\\CountIF\\ConsoleApp1\\ConsoleApp1.csproj",
       "projectName": "ConsoleApp1",
-      "projectPath": "C:\\Users\\luisprograms\\documents\\visual studio 2017\\Projects\\CountIF\\ConsoleApp1\\ConsoleApp1.csproj",
-      "outputPath": "C:\\Users\\luisprograms\\documents\\visual studio 2017\\Projects\\CountIF\\ConsoleApp1\\obj\\",
+      "projectPath": "C:\\dev\\PickCyclomaticComplexity\\CountIF\\ConsoleApp1\\ConsoleApp1.csproj",
+      "outputPath": "C:\\dev\\PickCyclomaticComplexity\\CountIF\\ConsoleApp1\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
