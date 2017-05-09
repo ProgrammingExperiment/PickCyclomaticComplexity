@@ -19,19 +19,32 @@ namespace ConsoleApp1
                 foreach (var file in Directory.EnumerateFiles(inFileName))
                 {
                     int ifCounter = 0;
+                    int caseCounter = 0;
                     Console.Write("File: " + file + "\t");
 
                     IEnumerable<string> lines = File.ReadLines(file);
                     foreach (var l in lines)
+
                     {
-                        if (l.ToLower().Contains("if"))
+                        var words = l.Split(' ');
+                        foreach (var word in words)
                         {
-                            ifCounter++;
+                            if (word.ToLower().Equals("if"))
+
+                                ifCounter++;
+
+
+                            if (word.ToLower().Equals("case")) 
+                            {
+                                caseCounter++;
+                            }
                         }
 
-                    }
+                
 
-                    Console.Write(" has " + ifCounter + " IF statements \n");
+                   }
+                    Console.WriteLine("contains {0} If's and {1} Case's ", ifCounter, caseCounter);
+                    
 
                 }
             }
@@ -39,26 +52,7 @@ namespace ConsoleApp1
             {
                 Console.WriteLine("Unable to find path");
             }
-            //int counter = 0;
-            //string delim = " ,.";
-            //string[] fields = null;
-            //string line = null;
-
-            //while (!sr.EndOfStream)
-            //{
-            //    line = sr.ReadLine();
-            //}
-
-
-
-            //fields = line.Split(delim.ToCharArray());
-            //for (int i = 0; i < fields.Length; i++)
-            //{
-            //    counter++;
-            //}
-            //sr.Close();
-            //Console.WriteLine("The word count is {0}", counter);
-    
+            
         }
     }
 }
