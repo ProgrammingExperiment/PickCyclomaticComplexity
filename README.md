@@ -32,7 +32,7 @@ PRINT NAME
 
 ```
 
-## Assignment 2: Count the “IF” statements in a text file.
+## Assignment 1: Count the “IF” statements in a text file.
  
 ### Input:
 Directory containg text files
@@ -41,9 +41,24 @@ List of Filenames with the count of IF statements.
 
 
 
-## Assignment 3: Count the “CASE” statements in a text file.
+## Assignment 2: Count the “CASE” statements in a text file.
 Reference: [PICK BASIC](http://jes.com/pb/pb_wp9.html)
 ### Input:
 Directory containg text files
 ### Ouput: 
 List of Filenames with the count of CASE statements.
+
+
+## Assignment 3: Count the number of comments in a text file.
+Reference: [PICK BASIC](http://jes.com/pb/pb_wp9.html)
+In PICK, the '*' character start a comment in a line. 
+As an example:
+```
+ * THIS IS A COMMENT
+ IF INITIAL = "F" THEN NAME = "FRED FLINTSTONE"  * THIS IS ANOTHER COMMENT AFTER A LINE OF CODE 
+```
+### Input:
+Directory containg text files
+### Ouput: 
+List of Filenames with the count of comments.
+
