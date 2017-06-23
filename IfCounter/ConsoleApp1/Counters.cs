@@ -5,24 +5,24 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-
+// to do fix logic on cases & Ifs not to count after * 
 namespace ConsoleApp1
 {
 
     class Counter
-
     {
-
-       //constructor 
+                //constructor 
         public Counter(String DirectoryPath)
         {
             _DirectoryPath = DirectoryPath;
         }
+
         String _DirectoryPath;
 
         public IEnumerable<String> getFiles()
         {
-            try {
+            try
+            {
                 return Directory.EnumerateFiles(_DirectoryPath);
             }
             catch (Exception e)
@@ -30,7 +30,6 @@ namespace ConsoleApp1
                 Console.WriteLine(e.Message);
                 return null;
             }
-
         }
 
         public int countIfs(String file)
@@ -38,10 +37,14 @@ namespace ConsoleApp1
             try
             {
                 IEnumerable<string> lines = File.ReadLines(file);
+
                 var ifCounter = 0;
                 foreach (var l in lines)
                 {
-                    var words = l.Split(' ');
+                    var filter = l.Split('*');
+
+                    var words = filter[0].Split(' ');
+                    
                     foreach (var word in words)
                     {
                         if (word.ToLower().Equals("if"))
@@ -65,16 +68,22 @@ namespace ConsoleApp1
             try
             {
                 IEnumerable<string> lines = File.ReadLines(file);
+
                 var CaseCounter = 0;
                 foreach (var l in lines)
                 {
-                    var words = l.Split(' ');
+                    var filter = l.Split('*');
+                   
+                    var words = filter[0].Split(' ');
+                   
                     foreach (var word in words)
                     {
+                   
                         if (word.ToLower().Equals("case"))
                         {
                             CaseCounter++;
                         }
+                        
                     }
                 }
                 return CaseCounter;
@@ -92,6 +101,7 @@ namespace ConsoleApp1
             try
             {
                 IEnumerable<string> lines = File.ReadLines(file);
+
                 var CommentCounter = 0;
                 foreach (var l in lines)
                 {
@@ -107,7 +117,6 @@ namespace ConsoleApp1
                 Console.WriteLine(e.Message);
                 return 0;
             }
-
         }
 
         public int countLines(String file)
@@ -115,11 +124,11 @@ namespace ConsoleApp1
             try
             {
                 IEnumerable<string> lines = File.ReadLines(file);
+
                 var lineCounter = 0;
                 foreach (var l in lines)
                 {
                     lineCounter++;
-
                 }
                 return lineCounter;
             }
@@ -129,7 +138,6 @@ namespace ConsoleApp1
                 return 0;
             }
         }
- 
-   
-}
+
+    }
 }
